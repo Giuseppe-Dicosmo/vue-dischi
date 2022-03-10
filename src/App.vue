@@ -31,6 +31,7 @@ $brand_white: white;
   width: 100%;
   height: 100vh;
   background: #1e2d3b;
+  color: white;
   font-family: "assistant", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

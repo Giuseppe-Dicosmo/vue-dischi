@@ -1,18 +1,19 @@
 <template>
   <section class="container-Music">
     <ul class="container">
-      characters: [],
-      <li v-for="album in characters" :key="album.id" class="characters">
-        {{album.name}}
-      </li>
+      <listAlbum v-for="(album, index) in characters" :key="index" :characters="album" />
     </ul>
   </section>
 </template>
 
 <script>
 import axios from "axios";
+import listAlbum from "./listAlbum.vue";
 
 export default {
+  components: {
+    listAlbum,
+  },
   data() {
     return {
       characters: [],
@@ -24,12 +25,12 @@ export default {
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((res) => {
           console.log("res.data", res.data);
-          this.characters = res.data;
+          this.characters = res.data.response;
         });
     },
   },
   created() {
-    this.personaggi()
+    this.personaggi();
   },
 };
 </script>
@@ -48,6 +49,8 @@ $brand_white: white;
     @include container;
     border: 1px solid yellow;
     color: $brand_white;
+    display: flex;
+    flex-flow: row wrap;
   }
 }
 </style>
