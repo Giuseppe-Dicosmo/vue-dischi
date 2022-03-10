@@ -20,7 +20,6 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/_style.scss";
-$brand_white: white;
 
 * {
   @include reset;
@@ -28,10 +27,10 @@ $brand_white: white;
 
 #app {
   // border: 1px solid red;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   background: #1e2d3b;
-  color: white;
   font-family: "assistant", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

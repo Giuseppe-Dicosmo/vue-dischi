@@ -1,9 +1,13 @@
 <template>
-  <section class="container-Music">
+  <main class="container-Music">
     <ul class="container">
-      <listAlbum v-for="(album, index) in characters" :key="index" :characters="album" />
+      <listAlbum
+        v-for="(album, index) in characters"
+        :key="index"
+        :characters="album"
+      />
     </ul>
-  </section>
+  </main>
 </template>
 
 <script>
@@ -37,20 +41,22 @@ export default {
 
 <style scoped lang="scss">
 @import "../assets/scss/_style.scss";
-$brand_white: white;
 
 .container-Music {
   // border: 1px solid yellow;
-  // display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-grow: 1;
-  height: 90%;
 
   .container {
     @include container;
-    border: 1px solid yellow;
-    color: $brand_white;
+    width: 60vw;
+    // border: 1px solid yellow;
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style-type: none;
   }
 }
 </style>

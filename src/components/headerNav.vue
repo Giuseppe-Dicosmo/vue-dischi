@@ -1,20 +1,29 @@
 <template>
   <header class="nav">
-
+    <figure>
+      <img src="../assets/Spotify_icon-icons.com_66783.svg" alt="" />
+    </figure>
   </header>
 </template>
 
 <script>
 export default {
   name: "headerNav",
-
 };
 </script>
 
 <style scoped lang="scss">
-.nav{
-  width: 100%;
-  height: 10%;
-  background: #2e3a46;
+$grey: #2e3a46;
+.nav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  background: $grey;
+
+  figure {
+    height: 65%;
+    aspect-ratio: 1 / 1;
+  }
 }
 </style>
