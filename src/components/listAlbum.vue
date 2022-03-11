@@ -31,13 +31,14 @@ $textColorWhite: white;
   background: $grey;
   text-align: center;
   color: $textColorWhite;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px #131314;
   transition: 0.5s;
   cursor: pointer;
 
   &:hover {
-    transition: 0.5s;
+    transition: all 0.5s;
     transform: scale(1.1);
+    border-radius: 10px;
     background: #47596c;
   }
 

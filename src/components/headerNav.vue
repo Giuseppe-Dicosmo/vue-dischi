@@ -17,7 +17,7 @@ $grey: #2e3a46;
 .nav {
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 7%;
   padding: 0 10px;
   background: $grey;
 
