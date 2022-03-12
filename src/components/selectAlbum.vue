@@ -1,7 +1,13 @@
 <template>
   <div class="container-select">
     <label for="cars">Che genere ascolti:</label>
-    <select v-model="selectedGenre" @change="$emit('changeGenre', selectedGenre)" name="cars" id="cars">
+    <select
+      v-model="SelezioneGenere"
+      @change="$emit('changeGenere', SelezioneGenere)"
+      name="cars"
+      id="cars"
+    >
+      <option value="all">All</option>
       <option value="metal">Metal</option>
       <option value="jazz">Jazz</option>
       <option value="pop">Pop</option>
@@ -14,24 +20,41 @@
 export default {
   data() {
     return {
-      selectedGenre: "",
+      SelezioneGenere: "",
     };
-  },
-  props: {
-    characters: {
-      type: String,
-      require: true,
-    },
   },
 };
 </script>
 
 <style scoped lang="scss">
+$grey: #2e3a46;
+$textColorWhite: white;
+
 .container-select {
   display: flex;
-  justify-content: start;
-  flex-direction: column;
-  border: 1px solid red;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  // border: 1px solid red;
+  color: $textColorWhite;
   height: 100%;
+
+  label {
+    margin-right: 5px;
+  }
+
+  select,
+  option {
+    flex-grow: 1;
+    background: #47596c;
+    color: $textColorWhite;
+  }
+
+  select {
+    height: 70%;
+    border-radius: 3px;
+    text-align: center;
+    border: none;
+  }
 }
 </style>

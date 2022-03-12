@@ -1,6 +1,6 @@
 <template>
   <main class="container-Music">
-    <selectAlbum @changeGenre="getSelectedGenre" />
+    <!-- <selectAlbum @changeGenere="FunzioneSelezioneGenere" /> -->
     <ul class="container">
       <listAlbum
         v-for="(album, index) in filteredAlbum"
@@ -13,36 +13,39 @@
 
 <script>
 import axios from "axios";
-import selectAlbum from "./selectAlbum.vue";
+// import selectAlbum from "./selectAlbum.vue";
 import listAlbum from "./listAlbum.vue";
 
 export default {
   components: {
-    selectAlbum,
+    // selectAlbum,
     listAlbum,
   },
   data() {
     return {
       characters: [],
-      genreToFilter: "",
     };
+  },
+  props: {
+    genereMusic: {
+      type: String,
+      default: "",
+    },
   },
   computed: {
     filteredAlbum() {
-      if (this.genreToFilter === "") {
+      if (this.genereMusic === "" || this.genereMusic === "all") {
         return this.characters;
       }
-      return this.characters.filter((item) => {
-        const { genre } = item;
-        return genre.toLowerCase().includes();
-        // item.genre === this.genreToFilter
+
+      return this.characters.filter((element) => {
+        const { genre } = element;
+
+        return genre.toLowerCase().includes(this.genereMusic.toLowerCase());
       });
     },
   },
   methods: {
-    getSelectedGenre: function (selectedGenre) {
-      this.genreToFilter = selectedGenre;
-    },
     personaggi: function () {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")

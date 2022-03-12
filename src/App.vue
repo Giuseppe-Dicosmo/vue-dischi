@@ -1,7 +1,7 @@
 <template>
   <main id="app">
-    <headerNav />
-    <containerMusic />
+    <headerNav @changeGenere="FunzioneSelezioneGenere" />
+    <containerMusic :genereMusic="filtroGenere"/>
   </main>
 </template>
 
@@ -14,7 +14,17 @@ export default {
   components: {
     headerNav,
     containerMusic,
-  }
+  },
+  data() {
+    return {
+      filtroGenere: "",
+    };
+  },
+  methods: {
+    FunzioneSelezioneGenere: function (SelezioneGenere) {
+      this.filtroGenere = SelezioneGenere;
+    },
+  },
 };
 </script>
 
